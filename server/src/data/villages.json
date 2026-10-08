@@ -1,0 +1,116 @@
+[
+  {
+    "id": "VIL-001",
+    "name": "Govindghat",
+    "coordinates": [30.6253, 79.5611],
+    "elevation_m": 1828,
+    "slope_deg": 38.5,
+    "river_distance_m": 45,
+    "population": 1250,
+    "vulnerability_tier": "Critical",
+    "historical_landslide_index": 0.85,
+    "iot_sensor_id": "ESP32-NODE-01",
+    "safe_shelter": {
+      "name": "Govindghat Higher Secondary Ground",
+      "coordinates": [30.6295, 79.5645],
+      "elevation_m": 1950,
+      "capacity": 2000,
+      "distance_m": 600
+    }
+  },
+  {
+    "id": "VIL-002",
+    "name": "Joshimath Lower Ward",
+    "coordinates": [30.5564, 79.5659],
+    "elevation_m": 1640,
+    "slope_deg": 34.0,
+    "river_distance_m": 180,
+    "population": 5400,
+    "vulnerability_tier": "High",
+    "historical_landslide_index": 0.90,
+    "iot_sensor_id": "ESP32-NODE-02",
+    "safe_shelter": {
+      "name": "Joshimath Army Helipad Camp",
+      "coordinates": [30.5610, 79.5720],
+      "elevation_m": 1890,
+      "capacity": 6000,
+      "distance_m": 1100
+    }
+  },
+  {
+    "id": "VIL-003",
+    "name": "Pipalkoti Valley",
+    "coordinates": [30.4300, 79.4310],
+    "elevation_m": 1259,
+    "slope_deg": 31.2,
+    "river_distance_m": 95,
+    "population": 4200,
+    "vulnerability_tier": "High",
+    "historical_landslide_index": 0.72,
+    "iot_sensor_id": "ESP32-NODE-03",
+    "safe_shelter": {
+      "name": "Pipalkoti Community Hall Plateau",
+      "coordinates": [30.4350, 79.4340],
+      "elevation_m": 1340,
+      "capacity": 4500,
+      "distance_m": 750
+    }
+  },
+  {
+    "id": "VIL-004",
+    "name": "Chamoli Town Basin",
+    "coordinates": [30.4030, 79.3320],
+    "elevation_m": 1050,
+    "slope_deg": 22.8,
+    "river_distance_m": 240,
+    "population": 12800,
+    "vulnerability_tier": "Medium",
+    "historical_landslide_index": 0.55,
+    "iot_sensor_id": "ESP32-NODE-04",
+    "safe_shelter": {
+      "name": "Gopeshwar Sports Stadium Ridge",
+      "coordinates": [30.4120, 79.3360],
+      "elevation_m": 1350,
+      "capacity": 15000,
+      "distance_m": 1800
+    }
+  },
+  {
+    "id": "VIL-005",
+    "name": "Nandaprayag Confluence",
+    "coordinates": [30.3300, 79.3240],
+    "elevation_m": 870,
+    "slope_deg": 36.4,
+    "river_distance_m": 50,
+    "population": 2100,
+    "vulnerability_tier": "Critical",
+    "historical_landslide_index": 0.78,
+    "iot_sensor_id": "ESP32-NODE-05",
+    "safe_shelter": {
+      "name": "Nandaprayag Inter College Heights",
+      "coordinates": [30.3340, 79.3290],
+      "elevation_m": 990,
+      "capacity": 3000,
+      "distance_m": 850
+    }
+  },
+  {
+    "id": "VIL-006",
+    "name": "Karnaprayag Riverfront",
+    "coordinates": [30.2600, 79.2170],
+    "elevation_m": 780,
+    "slope_deg": 29.5,
+    "river_distance_m": 70,
+    "population": 8400,
+    "vulnerability_tier": "High",
+    "historical_landslide_index": 0.68,
+    "iot_sensor_id": "ESP32-NODE-06",
+    "safe_shelter": {
+      "name": "Karnaprayag Govt Degree College",
+      "coordinates": [30.2650, 79.2230],
+      "elevation_m": 920,
+      "capacity": 9000,
+      "distance_m": 1200
+    }
+  }
+]
