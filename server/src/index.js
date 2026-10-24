@@ -24,10 +24,14 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`  🌊 FLASH FLOOD EARLY WARNING SYSTEM`);
-  console.log(`  🚀 Server running on http://localhost:${PORT}`);
-  console.log(`  📡 API endpoint: http://localhost:${PORT}/api/flood/status`);
-  console.log(`====================================================`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`  🌊 FLASH FLOOD EARLY WARNING SYSTEM`);
+    console.log(`  🚀 Server running on http://localhost:${PORT}`);
+    console.log(`  📡 API endpoint: http://localhost:${PORT}/api/flood/status`);
+    console.log(`====================================================`);
+  });
+}
+
+export default app;

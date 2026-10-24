@@ -152,7 +152,7 @@ export default function App() {
           <div className="p-4 rounded-xl bg-red-950/80 border border-red-700 text-red-200 text-sm flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <ShieldAlert className="w-5 h-5 text-red-400" />
-              <span>Could not connect to Express API. Ensure backend is running on port 5000.</span>
+              <span>Could not connect to the API server. Please check your connection.</span>
             </div>
             <button
               onClick={fetchStatus}
