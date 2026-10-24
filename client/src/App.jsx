@@ -6,7 +6,6 @@ import HillyCatchmentMap from './components/HillyCatchmentMap';
 import MLInsightsPanel from './components/MLInsightsPanel';
 import IoTStreamPanel from './components/IoTStreamPanel';
 import EvacuationAlertModal from './components/EvacuationAlertModal';
-import ArchitectureModal from './components/ArchitectureModal';
 import { Table, ShieldAlert, CheckCircle, AlertTriangle, ChevronRight } from 'lucide-react';
 
 export default function App() {
@@ -14,7 +13,6 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedVillage, setSelectedVillage] = useState(null);
-  const [architectureOpen, setArchitectureOpen] = useState(false);
   const [broadcastResult, setBroadcastResult] = useState(null);
   const [isBroadcasting, setIsBroadcasting] = useState(false);
 
@@ -53,7 +51,7 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Handle 1-click hackathon scenario change
+  // Handle 1-click scenario simulation change
   const handleSelectScenario = async (scenarioKey) => {
     try {
       setLoading(true);
@@ -142,7 +140,6 @@ export default function App() {
       <Navbar
         catchmentSummary={data?.catchment_summary}
         loraStatus={data?.lora_gateway_status}
-        onOpenArchitecture={() => setArchitectureOpen(true)}
         onRefresh={fetchStatus}
         loading={loading}
       />
@@ -166,7 +163,7 @@ export default function App() {
           </div>
         )}
 
-        {/* SIH Hackathon Scenario Bar */}
+        {/* Incident Scenario Bar */}
         <ScenarioBar
           activeScenario={data?.active_scenario || 'NORMAL'}
           onSelectScenario={handleSelectScenario}
@@ -301,12 +298,6 @@ export default function App() {
         onBroadcast={handleBroadcastAlert}
         broadcastResult={broadcastResult}
         isBroadcasting={isBroadcasting}
-      />
-
-      {/* SIH Technical Architecture Modal (For Judges & Evaluators) */}
-      <ArchitectureModal
-        isOpen={architectureOpen}
-        onClose={() => setArchitectureOpen(false)}
       />
 
     </div>

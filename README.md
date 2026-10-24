@@ -1,21 +1,21 @@
 # 🌊 DRAIN-SHIELD | Flash Flood Early Warning System for Hilly Regions
 
-> **Smart India Hackathon (SIH) Prototype**  
-> Problem Statement: Flash Flood Prediction System for Hilly Regions using Multi-Source Data  
+> **Autonomous Flash Flood Prediction & Early Warning System**  
+> Focus: Multi-Source Data Fusion (Radar Weather, Satellite DEM, IoT Edge Telemetry)  
 > Target Basin: Upper Alaknanda & Rishiganga River Catchment (Uttarakhand Himalayas)
 
 ---
 
 ## 🚀 Quick Start (Running Locally)
 
-To run the complete prototype on your laptop:
+To run the complete system locally:
 
 ### Terminal 1: Start Backend API (Express.js on Port 5000)
 ```powershell
 cd server
 npm.cmd run dev
 ```
-*API will run at:* `http://localhost:5000` (test status at `http://localhost:5000/api/flood/status`)
+*API will run at:* `http://localhost:5000` (health check at `http://localhost:5000/api/flood/status`)
 
 ### Terminal 2: Start Frontend Dashboard (React + Vite on Port 5173)
 ```powershell
@@ -26,46 +26,40 @@ npm.cmd run dev
 
 ---
 
-## 🎯 Hackathon Presentation Walkthrough (For Judges & Teachers)
+## 🎯 System Demonstration & Operational Flow
 
-Follow this 5-minute flow during your presentation:
+Follow this operational flow to explore system capabilities:
 
-1. **Introduction & Motivation (1 min)**:
-   - Show the interactive map of the Alaknanda catchment (Govindghat, Joshimath, Pipalkoti, Chamoli, Nandaprayag, Karnaprayag).
-   - Explain why hilly regions are vulnerable: steep slope angles (>35°), narrow river gorges, and cloudbursts causing flash floods in under 15 minutes before traditional models react.
-   - Highlight the **Multi-Source Data Fusion**:
+1. **Catchment & Regional Monitoring**:
+   - Inspect the interactive map of the Alaknanda catchment (Govindghat, Joshimath, Pipalkoti, Chamoli, Nandaprayag, Karnaprayag).
+   - Dynamic monitoring of vulnerable mountain hydrology: steep slope angles (>35°), narrow river gorges, and rapid cloudburst runoff.
+   - **Multi-Source Data Fusion**:
      - 🌦️ **IMD Weather**: Radar reflectivity (dBZ) & rainfall rates (mm/h).
      - 🏔️ **ISRO Bhuvan Cartosat DEM**: Slope gradient, flow accumulation, elevation.
-     - 📡 **IoT Edge (ESP32 + LoRaWAN)**: Ultrasonic water level and soil moisture transmitting over 865 MHz (operates even if cell towers fail).
+     - 📡 **IoT Edge (ESP32 + LoRaWAN)**: Ultrasonic water level and soil moisture transmitting over 865 MHz (operates even if cellular networks fail).
 
-2. **Demonstrating Normal Operations (1 min)**:
-   - Click **"Normal Conditions"** on the top demo bar.
-   - Show that all settlements are in **Green (LOW Risk <35%)**.
-   - Click on any village marker to show the live ESP32 telemetry (stable water level, normal soil moisture).
+2. **Normal Baseline Operations**:
+   - Select **"Normal Conditions"** on the incident simulation bar.
+   - All settlements report in **Green (LOW Risk <35%)**.
+   - Click any village marker to view live ESP32 telemetry (stable water level, normal soil moisture).
 
-3. **Simulating Monsoon & Upstream Cloudburst (1.5 min)**:
-   - Click **"Sustained Monsoon"**: Watch rainfall jump to 28 mm/h, risk elevate to **Yellow (MEDIUM)**.
-   - Click **"Upstream Cloudburst"**: Rainfall reaches 95 mm/h. Watch the Random Forest ML engine recalculate risks in real-time.
-   - Show the **Explainable AI (XAI) Panel**:
-     - Walk the judges through the **Feature Importances**: Rainfall (35%), Soil Saturation (25%), Water Rise Rate (22%), DEM Slope (12%), Landslide Index (6%).
-     - Show the natural language AI reasoning explanation.
+3. **Simulating Monsoon & Upstream Cloudburst**:
+   - Select **"Sustained Monsoon"**: Rainfall increases to 28 mm/h, risk elevates to **Yellow (MEDIUM)**.
+   - Select **"Upstream Cloudburst"**: Rainfall reaches 95 mm/h. The Random Forest ML engine recalculates risks in real-time.
+   - Inspect the **Explainable AI (XAI) Panel**:
+     - Real-time **Feature Importances**: Rainfall (35%), Soil Saturation (25%), Water Rise Rate (22%), DEM Slope (12%), Landslide Index (6%).
+     - Natural language AI reasoning explanations.
 
-4. **Triggering Critical Emergency & Evacuation (1 min)**:
-   - Click **"Catastrophic Deluge"** (or use the custom sliders to push rainfall >100 mm/h and soil saturation >80%).
+4. **Triggering Critical Emergency & Evacuation**:
+   - Select **"Catastrophic Deluge"** (or use the custom sliders to set rainfall >100 mm/h and soil saturation >80%).
    - The system triggers a **CRITICAL RED ALERT**:
-     - The bottom emergency bar pulses with an audible/visual siren toggle.
-     - Targeted low-lying wards (Nandaprayag, Govindghat) flash on the map.
-     - Click **"Dispatch CAP Evacuation Alerts"**: Simulates automated SMS cell broadcast, radio dispatch to NDRF 8th Battalion, and route highlighting to safe highland shelters (e.g. Govindghat Higher Secondary Ground at 1950m).
-
-5. **Showcasing Technical Architecture (30 sec)**:
-   - Click the top right **"SIH System Architecture"** button.
-   - Show judges the clean 4-tier pipeline and explain how the system will integrate with Python Scikit-Learn, GeoPandas, PostGIS, and physical LoRaWAN hardware.
+     - Emergency audio-visual alert banner activates.
+     - Vulnerable low-lying wards (Nandaprayag, Govindghat) pulse on the map.
+     - Trigger **"Dispatch CAP Evacuation Alerts"**: Simulates automated Common Alerting Protocol (CAP) SMS broadcasts, emergency responder notifications, and routing to designated highland shelters (e.g. Govindghat Higher Secondary Ground at 1950m).
 
 ---
 
-## 📂 Project Structure & How to Modify
-
-The project is intentionally structured with simple, modular files and friendly comments:
+## 📂 Project Structure
 
 ```
 FlashFloodEasy/
@@ -94,26 +88,25 @@ FlashFloodEasy/
 │   │   ├── index.css                      # Tailwind styling & dark theme definitions
 │   │   └── components/
 │   │       ├── Navbar.jsx                 # Top branding, LoRa status, and time
-│   │       ├── ScenarioBar.jsx            # 1-click test scenarios & custom tuning sliders
+│   │       ├── ScenarioBar.jsx            # Simulation presets & custom tuning sliders
 │   │       ├── RiskSummaryCards.jsx       # 4 KPI cards (Risk score, IMD rain, Hotspot, IoT mesh)
 │   │       ├── HillyCatchmentMap.jsx      # Leaflet interactive map with river & risk nodes
 │   │       ├── MLInsightsPanel.jsx        # Random Forest explainability & feature weights
 │   │       ├── IoTStreamPanel.jsx         # ESP32 edge stream (water level, rise rate, LoRa RSSI)
-│   │       ├── EvacuationAlertModal.jsx   # Critical alert banner, siren sound, CAP SMS broadcast
-│   │       └── ArchitectureModal.jsx      # Technical design modal for SIH evaluators
+│   │       └── EvacuationAlertModal.jsx   # Critical alert banner, siren sound, CAP SMS broadcast
 │   ├── index.html
 │   ├── vite.config.js                     # Configured with proxy to port 5000
 │   ├── tailwind.config.js
 │   └── package.json
 │
-└── README.md                              # This guide
+└── README.md                              # System documentation
 ```
 
 ---
 
-## 🔌 How to Add Real APIs Later
+## 🔌 Integrating Real APIs and Hardware
 
-Every service file includes a `// TODO: Replace with real API` comment:
+Every service file is cleanly isolated to allow swapping simulated services with real endpoints:
 
 1. **To Connect a Real Python ML Model (Scikit-Learn / XGBoost)**:
    In `server/src/services/mockRandomForestEngine.js`, replace the internal tree evaluation with:
@@ -141,7 +134,7 @@ Every service file includes a `// TODO: Replace with real API` comment:
 
 ---
 
-## 🏆 Key Strengths to Highlight in SIH Evaluation
-- **Solves the Mountain Delay**: Traditional flood models take hours; this prototype couples upstream slope + soil saturation to predict flash floods before river surges strike downstream settlements.
-- **Disaster Resilience**: Uses LoRaWAN (865 MHz) edge computing that continues reporting even when cellular towers or power grids wash away.
-- **Action-Oriented**: Does not just show numbers; it automatically triggers Common Alerting Protocol (CAP) SMS broadcasts and maps safe evacuation shelters for every village.
+## 🏆 Key System Capabilities
+- **Solves the Mountain Delay**: Couples upstream slope characteristics and soil saturation to forecast flash flood surges minutes before river surges reach downstream settlements.
+- **Disaster Resilience**: LoRaWAN (865 MHz) edge telemetry maintains operational data pipelines even during severe grid or cellular infrastructure failures.
+- **Action-Oriented Response**: Generates automated Common Alerting Protocol (CAP) broadcasts, siren triggers, and safe highland evacuation shelter routing.

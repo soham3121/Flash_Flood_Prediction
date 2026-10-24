@@ -61,10 +61,10 @@ export default function ScenarioBar({ activeScenario, onSelectScenario, onApplyC
           </div>
           <div>
             <h2 className="text-sm font-semibold text-slate-100 uppercase tracking-wider">
-              Hackathon Live Demo Controls
+              Incident Simulation Controls
             </h2>
             <p className="text-xs text-slate-400">
-              Select a scenario to trigger real-time AI inference & emergency alerts:
+              Select a scenario to simulate real-time AI inference & emergency alerts:
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldAlert, Radio, Activity, BookOpen, Mountain, RefreshCw } from 'lucide-react';
+import { ShieldAlert, Radio, Mountain, RefreshCw } from 'lucide-react';
 
-export default function Navbar({ catchmentSummary, loraStatus, onOpenArchitecture, onRefresh, loading }) {
+export default function Navbar({ catchmentSummary, loraStatus, onRefresh, loading }) {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
@@ -39,9 +39,6 @@ export default function Navbar({ catchmentSummary, loraStatus, onOpenArchitectur
             <div className="flex items-center space-x-2">
               <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
                 DRAIN-SHIELD
-                <span className="text-xs font-mono font-medium px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                  SIH PROTOTYPE
-                </span>
               </h1>
             </div>
             <p className="text-xs text-slate-400">
@@ -85,15 +82,6 @@ export default function Navbar({ catchmentSummary, loraStatus, onOpenArchitectur
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-sky-400' : ''}`} />
             </button>
           </div>
-
-          {/* Architecture / SIH Judges button */}
-          <button
-            onClick={onOpenArchitecture}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-sky-600/20 border border-sky-500/40 text-sky-300 hover:bg-sky-600/30 transition-colors font-medium cursor-pointer"
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>SIH System Architecture</span>
-          </button>
 
         </div>
 

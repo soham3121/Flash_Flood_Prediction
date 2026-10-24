@@ -38,7 +38,7 @@ export const floodController = {
     try {
       const villages = await getVillages();
       const rawWeather = await imdWeatherService.getPrecipitationData();
-      
+
       const { multiplier } = iotLoraService.updateScenarioMultipliers(
         activeScenario,
         customOverrides.soilMoisture,
@@ -94,7 +94,7 @@ export const floodController = {
       else if (averageCatchmentRisk >= 55 || criticalCount >= 1 || highCount >= 2) catchmentRiskLevel = "HIGH";
       else if (averageCatchmentRisk >= 35) catchmentRiskLevel = "MEDIUM";
 
-      const mostVulnerable = [...villagePredictions].sort((a, b) => 
+      const mostVulnerable = [...villagePredictions].sort((a, b) =>
         b.ml_prediction.risk_score_pct - a.ml_prediction.risk_score_pct
       )[0];
 
@@ -135,7 +135,7 @@ export const floodController = {
 
   /**
    * POST /api/flood/simulate
-   * Triggers a specific hackathon demonstration scenario or custom telemetry sliders
+   * Triggers a specific demonstration scenario or custom telemetry sliders
    */
   simulateScenario: async (req, res) => {
     try {

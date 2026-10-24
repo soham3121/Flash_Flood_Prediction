@@ -7,7 +7,7 @@ export default function ArchitectureModal({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
       <div className="bg-[#0F172A] border border-slate-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl text-slate-200">
-        
+
         {/* Header */}
         <div className="sticky top-0 bg-[#0F172A] border-b border-slate-800 p-5 flex items-center justify-between z-10">
           <div className="flex items-center space-x-3">
@@ -16,7 +16,7 @@ export default function ArchitectureModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                Smart India Hackathon (SIH) Technical Architecture
+                DRAIN-SHIELD Technical Architecture
               </h2>
               <p className="text-xs text-slate-400">
                 End-to-End Design: Multi-Source Ingestion • Edge LoRaWAN • Random Forest ML • CAP Alerting
@@ -34,7 +34,7 @@ export default function ArchitectureModal({ isOpen, onClose }) {
 
         {/* Content Body */}
         <div className="p-6 space-y-6 text-sm">
-          
+
           {/* Section 1: Problem & Approach */}
           <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
             <h3 className="text-sm font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-2">
@@ -47,7 +47,7 @@ export default function ArchitectureModal({ isOpen, onClose }) {
 
           {/* Section 2: 4-Tier Pipeline */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-            
+
             <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between">
               <div>
                 <div className="flex items-center space-x-2 text-sky-400 font-bold text-xs mb-2">
@@ -132,33 +132,33 @@ export default function ArchitectureModal({ isOpen, onClose }) {
 
             <div className="space-y-2 text-xs font-mono">
               <div className="p-2.5 rounded bg-slate-950 border border-slate-800 text-slate-300">
-                <span className="text-emerald-400 font-semibold">// 1. To connect real Python Scikit-Learn / FastAPI:</span><br/>
-                Inside <span className="text-sky-300">server/src/services/mockRandomForestEngine.js</span>, change the return to:<br/>
+                <span className="text-emerald-400 font-semibold">// 1. To connect real Python Scikit-Learn / FastAPI:</span><br />
+                Inside <span className="text-sky-300">server/src/services/mockRandomForestEngine.js</span>, change the return to:<br />
                 <span className="text-slate-400">const res = await fetch('http://localhost:8000/predict', &#123; method: 'POST', body: JSON.stringify(features) &#125;);</span>
               </div>
 
               <div className="p-2.5 rounded bg-slate-950 border border-slate-800 text-slate-300">
-                <span className="text-emerald-400 font-semibold">// 2. To connect real ESP32 Hardware via MQTT / LoRa Gateway:</span><br/>
+                <span className="text-emerald-400 font-semibold">// 2. To connect real ESP32 Hardware via MQTT / LoRa Gateway:</span><br />
                 Inside <span className="text-sky-300">server/src/services/iotLoraService.js</span>, subscribe to your ChirpStack or The Things Network (TTN) MQTT broker.
               </div>
 
               <div className="p-2.5 rounded bg-slate-950 border border-slate-800 text-slate-300">
-                <span className="text-emerald-400 font-semibold">// 3. To connect real IMD Weather API / Open-Meteo:</span><br/>
+                <span className="text-emerald-400 font-semibold">// 3. To connect real IMD Weather API / Open-Meteo:</span><br />
                 Inside <span className="text-sky-300">server/src/services/imdWeatherService.js</span>, paste your weather API key and latitude/longitude coordinates.
               </div>
             </div>
           </div>
 
-          {/* Section 4: SIH Roadmap Checklist */}
+          {/* Section 4: Production & Deployment Checklist */}
           <div className="bg-emerald-950/20 p-4 rounded-xl border border-emerald-800/40">
             <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-2">
-              <CheckCircle className="w-4 h-4" /> Ready for SIH Evaluator Presentation
+              <CheckCircle className="w-4 h-4" /> Production Deployment Readiness
             </h3>
             <ul className="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-              <li>Demonstrates multi-source sensor and GIS data fusion concept.</li>
-              <li>Explains Random Forest ML reasoning to judges without black-box confusion.</li>
-              <li>Solves communication breakdown during disasters with LoRaWAN mesh design.</li>
-              <li>Includes action-oriented evacuation protocols and village-level shelter routing.</li>
+              <li>Real-time multi-source sensor and GIS data fusion engine.</li>
+              <li>Transparent Random Forest ML reasoning with dynamic feature weight analysis.</li>
+              <li>Fault-tolerant LoRaWAN mesh connectivity ensuring uptime during grid failure.</li>
+              <li>Automated Common Alerting Protocol (CAP) evacuation dispatch and shelter routing.</li>
             </ul>
           </div>
 

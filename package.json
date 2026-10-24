@@ -1,19 +1,19 @@
 {
-  "name": "flash-flood-easy-sih",
+  "name": "drain-shield-system",
   "version": "1.0.0",
-  "description": "Flash Flood Prediction System for Hilly Regions using Multi-Source Data (SIH Prototype)",
+  "description": "Flash Flood Prediction & Early Warning System for Hilly Regions using Multi-Source Data",
   "scripts": {
     "server": "npm.cmd --prefix server run dev",
     "client": "npm.cmd --prefix client run dev"
   },
   "keywords": [
-    "sih",
     "flash-flood",
     "esp32",
     "lorawan",
     "random-forest",
-    "early-warning"
+    "early-warning",
+    "disaster-management"
   ],
-  "author": "SIH Team",
+  "author": "DRAIN-SHIELD Team",
   "license": "MIT"
 }

@@ -5,7 +5,7 @@
  * This module connects to a trained scikit-learn RandomForestClassifier
  * exported via joblib/ONNX or served via a Python FastAPI endpoint.
  * 
- * For this prototype:
+ * Simulation engine:
  * Evaluates multi-source feature vectors using ensemble trees to predict
  * flash flood probability (0-100%), classification tier, feature importances,
  * and natural language reasoning.

@@ -18,7 +18,7 @@ app.use('/api', apiRoutes);
 // Root route
 app.get('/', (req, res) => {
   res.json({
-    message: "Flash Flood Early Warning System API (SIH Prototype)",
+    message: "Flash Flood Early Warning System API",
     status: "Active",
     docs: "/api/flood/status"
   });
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`====================================================`);
-  console.log(`  🌊 FLASH FLOOD EARLY WARNING SYSTEM (SIH PROTOTYPE)`);
+  console.log(`  🌊 FLASH FLOOD EARLY WARNING SYSTEM`);
   console.log(`  🚀 Server running on http://localhost:${PORT}`);
   console.log(`  📡 API endpoint: http://localhost:${PORT}/api/flood/status`);
   console.log(`====================================================`);

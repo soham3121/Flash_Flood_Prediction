@@ -4,7 +4,7 @@
  * In a production deployment, this module connects to India Meteorological Department (IMD)
  * radar stations, Automatic Weather Stations (AWS), or OpenWeatherMap / Open-Meteo APIs.
  * 
- * For this prototype, it provides realistic multi-station rainfall telemetry.
+ * Provides realistic multi-station rainfall telemetry.
  */
 
 // Preset scenario values for IMD rainfall
@@ -70,7 +70,7 @@ export const imdWeatherService = {
   },
 
   /**
-   * Update weather simulation based on chosen hackathon scenario or manual slider
+   * Update weather simulation based on chosen scenario or manual slider
    */
   setScenario: (scenarioKey, customRate = null) => {
     if (WEATHER_SCENARIOS[scenarioKey]) {
